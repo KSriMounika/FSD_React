@@ -1,0 +1,98 @@
+.Parent
+{
+    width: 300px;
+    height: 200px;
+    position: relative;
+    background-color: navy;
+    border-radius: 6%;
+}
+.Child1{
+
+    width:40px;
+    height: 40px;
+    background-color: orange;
+    position: absolute;
+    border-radius: 50%;
+    bottom: 20%;
+    right: 10%;
+
+}
+.Child2{
+
+    width:40px;
+    height: 40px;
+    background-color: red;
+    position: absolute;
+    border-radius: 50%;
+    bottom: 20%;
+    right: 20%;
+
+}
+
+.para
+{
+    color: white;
+    font-size: 26px;
+    position: relative;
+    top: 13px;
+    left:20px;
+    text-align: justify;
+}
+
+.para6
+{
+    color: white;
+    font-size: 20px;
+    position: relative;
+    top:15px;
+    left:80px;
+   
+}
+
+
+.para1
+{
+    color: white;
+    font-size: 16px;
+    position: relative;
+    top:45px;
+    left:90px;
+   
+}
+
+.para2
+{
+    color: white;
+    font-size: 14px;
+    position: relative;
+    bottom: 109px;
+    left:-60px;
+   
+}
+ .para3
+{
+    color: white;
+    font-size: 16px;
+    position: relative;
+    bottom: 138px;
+    left: -106px;
+   
+}
+.para5
+{
+    color: white;
+    font-size: 10px;
+    position: relative;
+    bottom: 120px;
+    left: -100px;
+   
+}
+ .para4
+{
+    color: white;
+    font-size: 14px;
+    position: relative;
+    bottom: 160px;
+    left: -68px;
+   
+}   
