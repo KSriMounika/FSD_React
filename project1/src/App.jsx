@@ -1,17 +1,19 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import CardTask from './CardTask'
-import  CardTask1 from './Ecommercewebsite.jsx'
-import './App.css'
-import hair1 from "./assets/hair1.png";
-import hair2 from "./assets/hair2.png";
-import hair3 from "./assets/hair3.png";
-import hair4 from "./assets/hair4.png";
-import hair5 from "./assets/hair5.png";
-import hair6 from "./assets/hair6.png";
-import hair7 from "./assets/hair7.png";
-import hair8 from "./assets/hair8.png";
+// import CardTask from './CardTask'
+// import  CardTask1 from './Ecommercewebsite.jsx'
+// import './App.css'
+// import hair1 from "./assets/hair1.png";
+// import hair2 from "./assets/hair2.png";
+// import hair3 from "./assets/hair3.png";
+// import hair4 from "./assets/hair4.png";
+// import hair5 from "./assets/hair5.png";
+// import hair6 from "./assets/hair6.png";
+// import hair7 from "./assets/hair7.png";
+// import hair8 from "./assets/hair8.png";
+import HookComponent1 from "./HookComponent1";
+
 
 // function App() {
 //   const [count, setCount] = useState(0)
@@ -85,23 +87,36 @@ import hair8 from "./assets/hair8.png";
 // export default App;
 
 
-const cards = [
-  { Image: hair1, Price: 1100, Brand: "FaceWash" },
-  { Image: hair2, Price: 1200, Brand: "Shampoo" },
-  { Image: hair3, Price: 1300, Brand: "Accessories" },
-  { Image: hair4, Price: 1400, Brand: "Soap" },
-  { Image: hair5, Price: 1500, Brand: "Slippers" },
-  { Image: hair6, Price: 1600, Brand: "TShirt" },
-  { Image: hair7, Price: 1700, Brand: "FormalShirt" },
-  { Image: hair8, Price: 1800, Brand: "Saree" },
+// const cards = [
+//   { Image: hair1, Price: 1100, Brand: "FaceWash" },
+//   { Image: hair2, Price: 1200, Brand: "Shampoo" },
+//   { Image: hair3, Price: 1300, Brand: "Accessories" },
+//   { Image: hair4, Price: 1400, Brand: "Soap" },
+//   { Image: hair5, Price: 1500, Brand: "Slippers" },
+//   { Image: hair6, Price: 1600, Brand: "TShirt" },
+//   { Image: hair7, Price: 1700, Brand: "FormalShirt" },
+//   { Image: hair8, Price: 1800, Brand: "Saree" },
 
-];
-function App() {
-  return (
+// ];
+// function App() {
+//   return (
     
-        <CardTask1 MyData={cards} />
+//         <CardTask1 MyData={cards} />
     
    
+//   );
+// }
+
+// export default App;
+
+
+
+
+function App() {
+  return (
+    <div className="parent">
+      <HookComponent1 />
+    </div>
   );
 }
 
