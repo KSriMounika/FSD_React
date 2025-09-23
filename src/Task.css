@@ -1,0 +1,68 @@
+/* .parent
+{
+    display:flex;
+    gap:20px;
+
+}
+.child
+{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    font-size: 22px;
+    border: 2px solid black;
+} */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* subtle gradient background */
+    color: #000;
+}
+
+.parent {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center; /* Center cards for a better look */
+    color: #333;
+}
+
+.child {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    min-height: 220px;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 15px; /* more rounded corners */
+    background: linear-gradient(145deg, #89f7fe, #66a6ff); /* gradient card background */
+    color: #fff; /* white text looks good on gradient */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.child div {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.child:hover {
+    transform: translateY(-10px) scale(1.05); /* pop effect on hover */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #ff758c, #ff7eb3); /* hover gradient */
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .child {
+        width: 45%;
+    }
+}
+
+@media (max-width: 425px) {
+    .child {
+        width: 100%;
+    }
+}
