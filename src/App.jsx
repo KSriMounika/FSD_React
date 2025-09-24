@@ -226,23 +226,182 @@ import React from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { useState , useEffect} from "react";
+import './cardTask.css';
 
-function App(){
-  const [X, setX] = useState(0)
-   useEffect ( () =>
-  {
-    console.log('Executed')
-  }
-  );
-  return (
-    <>
-      <h1>Value of X: {X}</h1>
-      <button onClick={() => setX(X+1)}>Add Data</button>
+// function App(){
+  //Empty Dependency Array
+  // const [X, setX] = useState(0)
+  //  useEffect ( () =>
+  // {
+  //   console.log('Executed')
+  // },[]
+  // );
+
+  //Dependency array with dependency element x
+  // const [X, setX] = useState(0)
+  //  useEffect ( () =>
+  // {
+  //   console.log('Executed')
+  // },[X]
+  // );
+
+  //No Dependency array 
+//   const [X, setX] = useState(0)
+//    useEffect ( () =>
+//   {
+//     console.log('Executed')
+//   }
+//   );
+//   return (
+//     <>
+//       <h1>Value of X: {X}</h1>
+//       <button onClick={() => setX(X+1)}>Add Data</button>
 
       
-    </>
-  );
-}
+//     </>
+//   );
+// }
 
+// export default App;
+
+// Renders many times so it is side effect of an useEffect
+// function App ()
+//   {
+//     const[X, setX] = useState(0);
+//     const timer = setInterval(() => 
+//     {
+//         setX(c => c+1);
+
+//     }, 1000)
+//     return (
+//       <>
+//       <h1>Count: {X}</h1>
+//       </>
+//     );
+//   }
+// export default App;
+
+
+// function App ()
+//   {
+//     const[X, setX] = useState(0);
+//     useEffect( ()=>
+//     {
+//       const timer = setInterval(() => 
+//       {
+//           setX(c => c+1);
+
+//       }, 1000)
+//     })
+//     return (
+//       <>
+//       <h1>Count: {X}</h1>
+//       </>
+//     );
+//   }
+// export default App;
+
+
+// function App ()
+//   {
+//     const[X, setX] = useState(0);
+//     useEffect( ()=>
+//     {
+//       const timer = setInterval(() => 
+//       {
+//           setX(c => c+1);
+
+//       }, 1000)
+
+//       return () => clearInterval(timer)
+//     })
+//     return (
+//       <>
+//       <h1>Count: {X}</h1>
+//       </>
+//     );
+//   }
+// export default App;
+
+
+
+
+function App ()
+  {
+    const [CompleteData, setCompleteData] = useState([
+      {
+        "name" : "Keerthi",
+        "rollno" : "23P31A4235"
+      },
+      {
+        "name" : "Tanuja",
+        "rollno" : "23P31A4215"
+      },
+      {
+        "name" : "Yakanksha",
+        "rollno" : "23P31A4236"
+      },
+      {
+        "name" : "Likitha",
+        "rollno" : "23P31A4224"
+      }
+
+
+    ])
+    const [QueryResult, setQueryResult] = useState([])
+    const [UserQuery, setUserQuery] = useState(""); 
+
+    const Capture = (event) => 
+    {
+    setUserQuery(event.target.value);
+    };
+
+  
+  useEffect(() => {
+    if (UserQuery != "") {
+      
+       setQueryResult(
+        CompleteData.filter((ele) =>
+          ele.name.includes(UserQuery) || ele.rollno.includes(UserQuery) 
+        )
+      );
+    } 
+    else
+    {
+      setQueryResult(CompleteData);
+    }
+  }, [UserQuery]);
+
+    
+    return (
+      
+      <>
+       <input type="text" placeholder="Search..."
+       onChange={
+        (event) =>
+        {
+          Capture (event);
+        }
+       }
+       />
+       <div className="card_parent">
+      {
+        QueryResult.map((ele) => {
+          return (
+            <div className="card" >
+               {ele.name }<br></br>
+               {ele.rollno}
+              
+            </div>
+          )
+        })
+
+      }
+    </div>
+     
+      </>
+    );
+  }
 export default App;
+
 

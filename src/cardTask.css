@@ -1,4 +1,4 @@
-body{
+/* body{
     background-color: white;
 }
 .card_parent
@@ -39,4 +39,58 @@ body{
     
      font-size: 28px;
      color: #000;
+} */
+
+
+
+/* useEffect and useState Cards Task */
+body{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+input{
+
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    margin: 20px;
+    background-color: white;
+    color: #000;
+    border: 1px solid black;
+    font-weight: bold;
+   
+
+}
+input.hover
+{
+    background-color: white;
+    border: 2px solid black;
+    color: #000;
+   
+   
+}
+.card_parent
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+}
+.card
+{
+    width:150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: #000;
+    font-weight: bold;
+    
+   
 }
