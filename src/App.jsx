@@ -222,30 +222,30 @@
 // 
 
 
-import React from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import { useState , useEffect} from "react";
-import './cardTask.css';
+// import React from "react";
+// import reactLogo from "./assets/react.svg";
+// import viteLogo from "/vite.svg";
+// import { useState , useEffect} from "react";
+// import './cardTask.css';
 
 // function App(){
-  //Empty Dependency Array
-  // const [X, setX] = useState(0)
-  //  useEffect ( () =>
-  // {
-  //   console.log('Executed')
-  // },[]
-  // );
+//   // Empty Dependency Array
+//   const [X, setX] = useState(0)
+//    useEffect ( () =>
+//   {
+//     console.log('Executed')
+//   },[]
+//   );
 
-  //Dependency array with dependency element x
-  // const [X, setX] = useState(0)
-  //  useEffect ( () =>
-  // {
-  //   console.log('Executed')
-  // },[X]
-  // );
+//   Dependency array with dependency element x
+//   const [X, setX] = useState(0)
+//    useEffect ( () =>
+//   {
+//     console.log('Executed')
+//   },[X]
+//   );
 
-  //No Dependency array 
+//   No Dependency array 
 //   const [X, setX] = useState(0)
 //    useEffect ( () =>
 //   {
@@ -263,6 +263,9 @@ import './cardTask.css';
 // }
 
 // export default App;
+
+
+
 
 // Renders many times so it is side effect of an useEffect
 // function App ()
@@ -326,82 +329,266 @@ import './cardTask.css';
 
 
 
-function App ()
-  {
-    const [CompleteData, setCompleteData] = useState([
-      {
-        "name" : "Keerthi",
-        "rollno" : "23P31A4235"
-      },
-      {
-        "name" : "Tanuja",
-        "rollno" : "23P31A4215"
-      },
-      {
-        "name" : "Yakanksha",
-        "rollno" : "23P31A4236"
-      },
-      {
-        "name" : "Likitha",
-        "rollno" : "23P31A4224"
-      }
+// function App ()
+//   {
+//     const [CompleteData, setCompleteData] = useState([
+//       {
+//         "name" : "Keerthi",
+//         "rollno" : "23P31A4235"
+//       },
+//       {
+//         "name" : "Tanuja",
+//         "rollno" : "23P31A4215"
+//       },
+//       {
+//         "name" : "Yakanksha",
+//         "rollno" : "23P31A4236"
+//       },
+//       {
+//         "name" : "Likitha",
+//         "rollno" : "23P31A4224"
+//       }
 
 
-    ])
-    const [QueryResult, setQueryResult] = useState([])
-    const [UserQuery, setUserQuery] = useState(""); 
+//     ])
+//     const [QueryResult, setQueryResult] = useState([])
+//     const [UserQuery, setUserQuery] = useState(""); 
 
-    const Capture = (event) => 
-    {
-    setUserQuery(event.target.value);
-    };
+//     const Capture = (event) => 
+//     {
+//     setUserQuery(event.target.value); //To get what user typed
+//     };
 
   
-  useEffect(() => {
-    if (UserQuery != "") {
+//   useEffect(() => {
+//     if (UserQuery != "") {
       
-       setQueryResult(
-        CompleteData.filter((ele) =>
-          ele.name.includes(UserQuery) || ele.rollno.includes(UserQuery) 
-        )
-      );
-    } 
-    else
-    {
-      setQueryResult(CompleteData);
-    }
-  }, [UserQuery]);
+//        setQueryResult(
+//         CompleteData.filter((ele) =>
+//           ele.name.includes(UserQuery) || ele.rollno.includes(UserQuery) 
+//         )
+//       );
+//     } 
+//     else
+//     {
+//       setQueryResult(CompleteData);
+//     }
+//   }, [UserQuery]);
 
     
-    return (
+//     return (
       
-      <>
-       <input type="text" placeholder="Search..."
-       onChange={
-        (event) =>
-        {
-          Capture (event);
-        }
-       }
-       />
-       <div className="card_parent">
-      {
-        QueryResult.map((ele) => {
-          return (
-            <div className="card" >
-               {ele.name }<br></br>
-               {ele.rollno}
+//       <>
+//        <input type="text" placeholder="Search..."
+//        onChange={
+//         (event) =>
+//         {
+//           Capture (event);
+//         }
+//        }
+//        />
+//        <div className="card_parent">
+//       {
+//         QueryResult.map((ele) => {
+//           return (
+//             <div className="card" >
+//                {ele.name }<br></br>
+//                {ele.rollno}
               
-            </div>
-          )
-        })
+//             </div>
+//           )
+//         })
 
-      }
-    </div>
+//       }
+//     </div>
      
-      </>
-    );
-  }
+//       </>
+//     );
+//   }
+// export default App;
+
+
+
+
+// import "./TodoApp.css";
+
+// function TodoApp() {
+//   const [tasks, setTasks] = useState([]);
+//   const [newTask, setNewTask] = useState("");
+//   const [editId, setEditId] = useState(null);
+//   const [editText, setEditText] = useState("");
+
+//   // Add Task
+//   const addTask = (e) => {
+//     e.preventDefault();
+//     if (!newTask.trim()) return;
+//     setTasks([...tasks, { id: Date.now(), text: newTask, completed: false }]);
+//     setNewTask("");
+//   };
+
+
+//   // Delete Task
+//   const deleteTask = (id) => setTasks(tasks.filter((t) => t.id !== id));
+
+//   // Toggle Complete
+//   const toggleComplete = (id) =>
+//     setTasks(
+//       tasks.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t))
+//     );
+  
+    
+//   // Start Editing
+//   const startEdit = (id, text) => {
+//     setEditId(id);
+//     setEditText(text);
+//   };
+
+//   // Save Edited Task
+//   const saveEdit = (id) => {
+//     if (!editText.trim()) return;
+//     setTasks(tasks.map((t) => (t.id === id ? { ...t, text: editText } : t)));
+//     setEditId(null);
+//     setEditText("");
+//   };
+
+  
+
+//   return (
+//     <div className="container">
+//       <h2>✅ Todo List</h2>
+
+//       {/* Add Task */}
+//       <form onSubmit={addTask} className="inputBox">
+//         <input
+//           type="text"
+//           value={newTask}
+//           onChange={(e) => setNewTask(e.target.value)}
+//           placeholder="Enter a new task"
+//         />
+//         <button type="submit">Add</button>
+//       </form>
+
+//       {/* Task List */}
+//       <ul className="list">
+//         {tasks.map((task) => (
+//           <li key={task.id} className="listItem">
+//             <input
+//               type="checkbox"
+//               checked={task.completed}
+//               onChange={() => toggleComplete(task.id)}
+//             />
+
+//             {editId === task.id ? (
+//               <input
+//                 type="text"
+//                 value={editText}
+//                 onChange={(e) => setEditText(e.target.value)}
+//                 className="editInput"
+//               />
+//             ) : (
+//               <span className={task.completed ? "taskText completed" : "taskText"}>
+//                 {task.text}
+//               </span>
+//             )}
+
+//             {editId === task.id ? (
+//               <button onClick={() => saveEdit(task.id)} className="actionBtn save">
+//                 Save
+//               </button>
+//             ) : (
+//               <button
+//                 onClick={() => startEdit(task.id, task.text)}
+//                 className="actionBtn edit"
+//               >
+//                 Edit
+//               </button>
+//             )}
+
+//             <button onClick={() => deleteTask(task.id)} className="actionBtn delete">
+//               Delete
+//             </button>
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// }
+
+// export default TodoApp;
+
+// import React from "react";
+// import Navbar from './Navbar';
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import Home from "./Home";
+// import Dashboard from "./Dashboard";
+// import About from "./About";
+
+// const App = () => {
+//   return (
+
+//      <div>
+//       <BrowserRouter>
+//       <Navbar />
+//       <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/dashboard" element={<Dashboard />} />
+//           <Route path="/about" element={<About />} />
+//         </Routes>
+//       </BrowserRouter>
+//      </div>
+//   )
+// }
+// export default App;
+
+
+
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import Contact from './contact';
+import Services from './Services';
+import PageNotFound from './PageNotFound';
+
+function App() {
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          {/* <Route path="/home" element={<Home />} /> */}
+          <Route path="/" element={<Home />} /> 
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="*" element = {<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
+}
+
 export default App;
 
 
+
+
+//Product-Task Sending info b/w 2 routes
+// import React from 'react';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import ProductCards from './ProductCards';
+// import ProductsInfo from './ProductsInfo';
+
+// function App() {
+//   return (
+//     <>
+//       <BrowserRouter>
+//         <Routes>
+         
+//           <Route path="/" element={<ProductCards />} /> 
+//           <Route path="/product-info/:ID" element={<ProductsInfo />} />
+          
+//         </Routes>
+//       </BrowserRouter>
+//     </>
+//   );
+// }
+
+// export default App;

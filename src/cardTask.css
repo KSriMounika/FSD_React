@@ -44,34 +44,28 @@
 
 
 /* useEffect and useState Cards Task */
-body{
+/* body{
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
    
 }
-input{
+button{
 
     width: 200px;
-    height: 30px;
+    height: 40px;
     font-size: 20px;
     margin: 20px;
     background-color: white;
     color: #000;
     border: 1px solid black;
     font-weight: bold;
+    text-align: center;
    
 
 }
-input.hover
-{
-    background-color: white;
-    border: 2px solid black;
-    color: #000;
-   
-   
-}
+
 .card_parent
 {
     width: 100%;
@@ -93,4 +87,106 @@ input.hover
     font-weight: bold;
     
    
+} */
+
+
+body {
+  background-color: white;
+  display: flex;
+  align-items: flex-start; /* start from top */
+  justify-content: center;
+  min-height: 100vh; /* full viewport height */
+  padding-top: 50px;  /* spacing from top */
+}
+
+/* Container */
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Input Section */
+.inputBox {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.inputBox input {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.inputBox button {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.inputBox button:hover {
+  background-color: #45a049;
+}
+
+/* Task List */
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.listItem input[type="text"] {
+  flex: 1;
+  margin-right: 10px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+/* Task text */
+.taskText {
+  margin-left: 10px;
+  flex: 1;
+  text-align: left;
+}
+
+.taskText.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Buttons inside task list */
+.listItem button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #2196f3;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.listItem button:hover {
+  background-color: #0b7dda;
 }
