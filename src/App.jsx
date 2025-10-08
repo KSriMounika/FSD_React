@@ -541,31 +541,31 @@
 // export default App;
 
 
+//Reactr Router DOM CONCEPT
+// import React from 'react';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import Home from './Home';
+// import Contact from './contact';
+// import Services from './Services';
+// import PageNotFound from './PageNotFound';
 
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './Home';
-import Contact from './contact';
-import Services from './Services';
-import PageNotFound from './PageNotFound';
+// function App() {
+//   return (
+//     <>
+//       <BrowserRouter>
+//         <Routes>
+//           {/* <Route path="/home" element={<Home />} /> */}
+//           <Route path="/" element={<Home />} /> 
+//           <Route path="/contact" element={<Contact />} />
+//           <Route path="/services" element={<Services />} />
+//           <Route path="*" element = {<PageNotFound />} />
+//         </Routes>
+//       </BrowserRouter>
+//     </>
+//   );
+// }
 
-function App() {
-  return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          {/* <Route path="/home" element={<Home />} /> */}
-          <Route path="/" element={<Home />} /> 
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="*" element = {<PageNotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </>
-  );
-}
-
-export default App;
+// export default App;
 
 
 
@@ -592,3 +592,59 @@ export default App;
 // }
 
 // export default App;
+
+
+//Images Method-1 TemporaryLink
+// import React from 'react';
+// import { useState } from 'react';
+// function App()
+// {
+//   const[ImagePath, setImagePath] = useState(null)
+//   const GetData = (event) => {
+//     const file = event.target.files[0]
+//     const path = URL.createObjectURL(file)
+//     console.log(path)
+//     setImagePath(path)
+//   }
+//   return(
+//     <>
+//     <input type = "file" onChange={(event) => GetData(event)} />
+//     {
+//        ImagePath? <img src={ImagePath} alt='Image Cracked'/>: <></>
+//     }
+//     </>
+  
+//   )
+// }
+// export default App;
+
+
+//Image Method-2 Convert to base-64
+import React from 'react';
+import { useState } from 'react';
+function App()
+{
+  const[ImagePath, setImagePath] = useState(null)
+  const GetData = (event) => {
+    const file = event.target.files[0]
+    const reader = new FileReader()
+    reader.readAsDataURL(file)
+    reader.onload = () => {
+        
+        console.log(reader.result)
+        setImagePath(reader.result)
+       
+    }
+    
+  }
+  return(
+    <>
+    <input type = "file" onChange={(event) => GetData(event)} />
+    {
+       ImagePath? <img src={ImagePath} alt='Image Cracked'/>: <></>
+    }
+    </>
+  
+  )
+}
+export default App;
