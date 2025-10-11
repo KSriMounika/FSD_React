@@ -1,4 +1,4 @@
- * {
+  /* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -58,4 +58,151 @@ html, body {
     display: flex;
     flex-direction: column;
     color: #000;
+}  */
+
+/* Reset */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ✅ Global layout fix */
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ✅ Ensure the React root element fills the screen */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  position: relative;
+}
+
+/* 🔍 Search Bar Section */
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: white;
+  position: sticky; /* keeps it visible while scrolling */
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-box {
+  width: 60%;
+  padding: 10px 15px;
+  border: 2px solid #4caf50;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.search-box:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+/* 🧩 Cards Section */
+.parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* 📦 Card Design */
+.card {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: white;
+  padding: 20px 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🖼️ Image Section */
+.image-section img {
+  width: 250px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+/* 🧾 Info Section */
+.info-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.info-section .brand,
+.info-section .price {
+  font-size: 22px;
+  color: #000;
+}
+
+/* ✅ Detailed Info Page Fix */
+.DetailedInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* horizontal centering */
+  justify-content: center;   /* vertical centering */
+  text-align: center;        /* optional: centers text inside */
+  color: #000;
+  padding: 30px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* 🚫 No Results */
+.no-results {
+  text-align: center;
+  font-size: 18px;
+  color: gray;
+  margin-top: 20px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .search-box {
+    width: 80%;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .image-section img {
+    width: 100%;
+    height: auto;
+  }
 }

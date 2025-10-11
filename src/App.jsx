@@ -620,31 +620,112 @@
 
 
 //Image Method-2 Convert to base-64
-import React from 'react';
-import { useState } from 'react';
-function App()
-{
-  const[ImagePath, setImagePath] = useState(null)
-  const GetData = (event) => {
-    const file = event.target.files[0]
-    const reader = new FileReader()
-    reader.readAsDataURL(file)
-    reader.onload = () => {
+// import React from 'react';
+// import { useState } from 'react';
+// function App()
+// {
+//   const[ImagePath, setImagePath] = useState(null)
+//   const GetData = (event) => {
+//     const file = event.target.files[0]
+//     const reader = new FileReader()
+//     reader.readAsDataURL(file)
+//     reader.onload = () => {
         
-        console.log(reader.result)
-        setImagePath(reader.result)
+//         console.log(reader.result)
+//         setImagePath(reader.result)
        
-    }
+//     }
     
-  }
-  return(
-    <>
-    <input type = "file" onChange={(event) => GetData(event)} />
-    {
-       ImagePath? <img src={ImagePath} alt='Image Cracked'/>: <></>
-    }
-    </>
+//   }
+//   return(
+//     <>
+//     <input type = "file" onChange={(event) => GetData(event)} />
+//     {
+//        ImagePath? <img src={ImagePath} alt='Image Cracked'/>: <></>
+//     }
+//     </>
   
-  )
+//   )
+// }
+// export default App;
+
+//useContext
+// import reactLogo from "./assets/react.svg";
+// import viteLogo from "/vite.svg";
+// import "./App.css";
+// import { useState, useEffect } from "react";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import Page1 from "./Page1";
+// import Page2 from "./Page2";
+// import Store from "./Store";
+// function App() {
+//   const [Count ,setCount] = useState(0)
+//   return (
+//     <>
+//     <Store.Provider value={{Count,setCount}}>
+//       <BrowserRouter>
+//         <Routes>
+//           <Route path="/" element={<Page1 />} />
+//           <Route path="/page2" element={<Page2 />} />
+//         </Routes>
+//       </BrowserRouter>
+//     </Store.Provider>
+//     </>
+//   );
+// }
+// export default App;
+
+
+// import React from 'react';
+// import './ReactTask.css';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import { useState, useEffect } from 'react';
+// import Header from "./Header";
+// import ViewData from './ViewData';
+// import ViewDataInfo from './ViewDataInfo';
+// import Form from './Form';
+// import Store from './Store';
+
+
+// function App() {
+ 
+//    const[Data, setData] = useState([])
+//    return (
+//       <Store.Provider value={{Data, setData}}>
+//           <BrowserRouter>
+//             <Routes>
+//               <Route path="/" element={<Header />} />
+//               <Route path="/ViewData" element={<ViewData  />} />
+//               <Route path="/ViewDataInfo/:ID" element={<ViewDataInfo  />} />
+//               <Route path="/AddData" element={<Form  />} />
+//             </Routes>
+//           </BrowserRouter>
+//       </Store.Provider>
+//   );
+// }
+
+// export default App;
+
+import React from 'react';
+import './ReactTask.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from "./Header";
+import ViewData from './ViewData';
+import ViewDataInfo from './ViewDataInfo';
+import Form from './Form';
+import { useState } from 'react';
+function App() {
+  const [data, setData] = useState([]);
+   return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Header />} />
+        <Route path="/ViewData" element={<ViewData data={data} />} />
+        <Route path="/ViewDataInfo/:ID" element={<ViewDataInfo data={data} />} />
+        <Route path="/AddData" element={<Form setData={setData} />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
+
 export default App;

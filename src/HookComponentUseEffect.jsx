@@ -2,7 +2,7 @@ import React, { useState, useEffect} from "react";
 
 const HookComponentUseEffect = () =>
 {
-    set[X, setX] = useState(0)
+    set[Data, setData] = useState(0)
     useEffect ( () =>
     {
         console.log('Executed')

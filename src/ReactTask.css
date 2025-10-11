@@ -1,0 +1,80 @@
+
+.header {
+  background-color: #2e8b57;  
+  color: white;
+  height: 10svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  position: fixed;           
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;               
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+.Parent {
+  width: 400px;          
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+ 
+}
+
+input, textarea {
+  width: 100%;                 
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  color: black;
+  font-size: 14px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+textarea {
+  resize: none;
+  height: 70px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  width: 48%;
+  margin-right: 4%;
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+form {
+  text-align: left;
+}
+.Img
+{
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+ 
+}
