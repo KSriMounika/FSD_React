@@ -1,4 +1,4 @@
-/*  
+/* 
 .header {
   background-color: #2e8b57;  
   color: white;
@@ -77,17 +77,17 @@ form {
   height: 300px;
   object-fit: cover;
  
-} 
- */
+}  */
 
- body {
+
+body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
 }
 
-/* Header remains the same */
+
 .header {
   background-color: #2e8b57;  
   color: white;
@@ -115,7 +115,7 @@ form {
   justify-content: center;      /* center vertically */
   align-items: center;          /* center horizontally */
   min-height: 100vh;            /* full viewport height */
-  padding-top: 10svh;           /* offset for fixed header */
+  padding-top: 10px;           /* offset for fixed header */
   box-sizing: border-box;
 }
 
@@ -175,3 +175,4 @@ input[type="reset"]:hover {
   height: 300px;
   object-fit: cover;
 }
+

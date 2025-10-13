@@ -1,0 +1,133 @@
+/* Body */
+body {
+  background-color: #f7f7f7;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+/* Container */
+.container {
+  width: 400px;
+  background-color: white;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Add Task Input */
+.inputBox {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.inputBox input {
+  flex: 1;
+  padding: 8px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.inputBox input:focus {
+  border-color: #4caf50;
+}
+
+.inputBox button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.inputBox button:hover {
+  background-color: #45a049;
+}
+
+/* Task List */
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.listItem input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+/* Task Text */
+.taskText {
+  flex: 1;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.taskText.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Edit Input */
+.editInput {
+  flex: 1;
+  margin-left: 10px;
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Buttons inside task list */
+.actionBtn {
+  margin-left: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.actionBtn.edit {
+  background-color: #2196f3;
+}
+
+.actionBtn.edit:hover {
+  background-color: #0b7dda;
+}
+
+.actionBtn.save {
+  background-color: #4caf50;
+}
+
+.actionBtn.save:hover {
+  background-color: #45a049;
+}
+
+.actionBtn.delete {
+  background-color: #f44336;
+}
+
+.actionBtn.delete:hover {
+  background-color: #da190b;
+}

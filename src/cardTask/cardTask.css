@@ -89,17 +89,17 @@ button{
    
 } */
 
-
+/* 
 body {
   background-color: white;
   display: flex;
-  align-items: flex-start; /* start from top */
+  align-items: flex-start; 
   justify-content: center;
-  min-height: 100vh; /* full viewport height */
-  padding-top: 50px;  /* spacing from top */
+  min-height: 100vh; 
+  padding-top: 50px;  
 }
 
-/* Container */
+
 .container {
   max-width: 500px;
   margin: 50px auto;
@@ -110,7 +110,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Input Section */
+
 .inputBox {
   display: flex;
   justify-content: space-between;
@@ -141,7 +141,7 @@ body {
   background-color: #45a049;
 }
 
-/* Task List */
+
 .list {
   list-style: none;
   padding: 0;
@@ -163,7 +163,7 @@ body {
   font-size: 16px;
 }
 
-/* Task text */
+
 .taskText {
   margin-left: 10px;
   flex: 1;
@@ -175,7 +175,7 @@ body {
   color: #888;
 }
 
-/* Buttons inside task list */
+
 .listItem button {
   margin-left: 5px;
   padding: 5px 10px;
@@ -189,4 +189,4 @@ body {
 
 .listItem button:hover {
   background-color: #0b7dda;
-}
+} */

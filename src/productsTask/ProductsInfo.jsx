@@ -6,6 +6,7 @@ import hair3 from "./assets/hair3.png";
 import { useParams } from "react-router-dom";
 
 
+
 function ProductInfo(){
     const Data = [
              
@@ -37,4 +38,5 @@ function ProductInfo(){
             :<></>
         
     )
-}export default ProductInfo;
+}
+export default ProductInfo;

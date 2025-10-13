@@ -685,8 +685,6 @@
 // import ViewDataInfo from './ViewDataInfo';
 // import Form from './Form';
 // import Store from './Store';
-
-
 // function App() {
  
 //    const[Data, setData] = useState([])
@@ -706,26 +704,137 @@
 
 // export default App;
 
+// import React from 'react';
+// import './ReactTask.css';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import Header from "./Header";
+// import ViewData from './ViewData';
+// import ViewDataInfo from './ViewDataInfo';
+// import Form from './Form';
+// import { useState } from 'react';
+// function App() {
+//   const [data, setData] = useState([]);
+//    return (
+//     <BrowserRouter>
+//       <Routes>
+//         <Route path="/" element={<Header />} />
+//         <Route path="/ViewData" element={<ViewData data={data} />} />
+//         <Route path="/ViewDataInfo/:ID" element={<ViewDataInfo data={data} />} />
+//         <Route path="/AddData" element={<Form setData={setData} />} />
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// }
+
+// export default App;
+
+// react-countup
+// import React from "react";
+// import CountUp from "react-countup";
+// function App(){
+//   return(
+//       <h1>
+//         <CountUp 
+         
+//          end = {50}
+//          duration={5}
+         
+//         />
+//       </h1>
+//   );
+// }
+// export default App;
+
+
+//react-tilty
+// import React from "react";
+// import Img  from "./assets/react.svg"
+// import Tilty from "react-tilty";
+// function App(){
+//   return(
+//      <div class="App">
+//       <Tilty>
+//         <img src = {Img} />
+
+//       </Tilty>
+//     </div>
+//   );
+// }
+// export default App;
+
+//react-toastify
+// import React from "react";
+// import { ClipLoader } from "react-spinners";
+
+// function App(){
+
+//   const notify = () => toast('Sucessful...');
+//   return(
+//      <div>
+//       <button onClick={notify}>Make me a toast</button>
+//       <Toaster />
+//     </div>
+
+//   );
+// }
+// export default App;
+
+
+
+//react-loader-spinner
+// import React from "react";
+// import { RotatingLines } from "react-loader-spinner";
+
+// function App() {
+//   return (
+//     <div className="loader_spinner" >
+//       <RotatingLines
+//         strokeColor="white"
+//         strokeWidth="4"
+//         animationDuration="0.75"
+//         width="100"
+//         visible={true}
+//       />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// react-confetti
+// import React from "react";
+// import Confetti from "react-confetti";
+// function App() {
+//   return (
+//     <Confetti 
+//      numberOfPieces = {100}
+//      gravity = {0.3}
+//     />
+//   );
+// }
+// export default App;
+
+// import React from "react";
+// import SimpleSlider from "./reactSlickPage/myslick";
+
+// const App = () => {
+
+//   return(
+//     <SimpleSlider />
+//   )
+// }
+
+// export default App;
+
+
+
+// App.jsx
 import React from 'react';
 import './ReactTask.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from "./Header";
-import ViewData from './ViewData';
-import ViewDataInfo from './ViewDataInfo';
-import Form from './Form';
-import { useState } from 'react';
+import AppRoutes from './reactCompleteTask/AppRoutes';
+
 function App() {
-  const [data, setData] = useState([]);
-   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Header />} />
-        <Route path="/ViewData" element={<ViewData data={data} />} />
-        <Route path="/ViewDataInfo/:ID" element={<ViewDataInfo data={data} />} />
-        <Route path="/AddData" element={<Form setData={setData} />} />
-      </Routes>
-    </BrowserRouter>
-  );
+  return <AppRoutes />;
 }
 
 export default App;
