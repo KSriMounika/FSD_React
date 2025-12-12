@@ -768,37 +768,60 @@
 
 
 
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
-// import "./App.css";
-// import { useState, useEffect } from "react";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Page1 from "./Page1";
-// import Page2 from "./Page2";
-// import Store from "./Store";
+
+
+// import React from 'react';
+// import Pages from './useContext/Pages';
+
 // function App() {
-//   const [Count ,setCount] = useState(0)
-//   return (
-//     <>
-//     <Store.Provider value={{Count,setCount}}>
-//       <BrowserRouter>
-//         <Routes>
-//           <Route path="/" element={<Page1 />} />
-//           <Route path="/page2" element={<Page2 />} />
-//         </Routes>
-//       </BrowserRouter>
-//     </Store.Provider>
-//     </>
-//   );
+//   return <Pages />;
 // }
 // export default App;
 
 
 
-import React from 'react';
-import Pages from './useContext/Pages';
+// import React from 'react';
+// import ApexChart from './dashboard/ApexChart.jsx';
+// import QueryCards from './dashboard/QueryCards.jsx';
 
+// function App() {
+//   return <ApexChart />;
+//   return <QueryCards />;
+// }
+// export default App;
+
+
+
+//API Calling
+import react from "react";
+// import './App.css';
+import axios from "axios";
 function App() {
-  return <Pages />;
+  let baseURL = "http://localhost:7010";
+  const fetchData = () => {
+    // axios.get(`${baseURL}/get-student`)
+    axios.get("http://localhost:7010/get-student")
+    .then((result) => console.log(result.data))
+    .catch((error) => console.log(error))
+   
+  };
+  let myuser = {
+         name : "Anju",
+         "role" : "Doctor",
+         "College" : "RMC"
+  };
+  const addData = () => {
+    axios.post(`${baseURL}/add-student`, myuser)
+    .then((result) => console.log(result.data))
+    .catch((error) => console.log(error))
+   
+  };
+  return(
+    <>
+    <h1>This is my frontend</h1>
+    <button onClick={fetchData}>Fetch Data</button>
+    <button onClick={addData}>add Data</button>
+    </>
+  )
 }
 export default App;

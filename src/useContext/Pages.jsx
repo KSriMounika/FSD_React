@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Page1 from "./Page1";
 import Page2 from "./Page2";
 import Store from "./Store";
-function pages() {
+function Pages() {
   const [Count ,setCount] = useState(0)
   return (
     <>
@@ -19,4 +19,4 @@ function pages() {
     </>
   );
 }
-export default pages;
+export default Pages;
