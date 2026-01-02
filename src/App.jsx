@@ -795,33 +795,53 @@
 //API Calling
 import react from "react";
 // import './App.css';
-import axios from "axios";
+// import axios from "axios";
+// function App() {
+//   let baseURL = "http://localhost:7010";
+//   const fetchData = () => {
+//     // axios.get(`${baseURL}/get-student`)
+//     axios.get("http://localhost:7010/get-student")
+//     .then((result) => console.log(result.data))
+//     .catch((error) => console.log(error))
+   
+//   };
+//   let myuser = {
+//          name : "Anju",
+//          "role" : "Doctor",
+//          "College" : "RMC"
+//   };
+//   const addData = () => {
+//     axios.post(`${baseURL}/add-student`, myuser)
+//     .then((result) => console.log(result.data))
+//     .catch((error) => console.log(error))
+   
+//   };
+//   return(
+//     <>
+//     <h1>This is my frontend</h1>
+//     <button onClick={fetchData}>Fetch Data</button>
+//     <button onClick={addData}>add Data</button>
+//     </>
+//   )
+// }
+// export default App;
+
+
+import { useState } from "react";
+import StudentForm from "./StudentForm";
+import StudentList from "./StudentList";
+
 function App() {
-  let baseURL = "http://localhost:7010";
-  const fetchData = () => {
-    // axios.get(`${baseURL}/get-student`)
-    axios.get("http://localhost:7010/get-student")
-    .then((result) => console.log(result.data))
-    .catch((error) => console.log(error))
-   
-  };
-  let myuser = {
-         name : "Anju",
-         "role" : "Doctor",
-         "College" : "RMC"
-  };
-  const addData = () => {
-    axios.post(`${baseURL}/add-student`, myuser)
-    .then((result) => console.log(result.data))
-    .catch((error) => console.log(error))
-   
-  };
-  return(
+  const [refreshFlag, setRefreshFlag] = useState(false);
+
+  const refresh = () => setRefreshFlag(!refreshFlag);
+
+  return (
     <>
-    <h1>This is my frontend</h1>
-    <button onClick={fetchData}>Fetch Data</button>
-    <button onClick={addData}>add Data</button>
+      <StudentForm refresh={refresh} />
+      <StudentList refreshFlag={refreshFlag} />
     </>
-  )
+  );
 }
+
 export default App;
