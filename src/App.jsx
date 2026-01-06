@@ -827,19 +827,83 @@ import react from "react";
 // export default App;
 
 
-import { useState } from "react";
-import StudentForm from "./StudentForm";
-import StudentList from "./StudentList";
+// import { useState } from "react";
+// import StudentForm from "./StudentForm";
+// import StudentList from "./StudentList";
+
+// function App() {
+//   const [refreshFlag, setRefreshFlag] = useState(false);
+
+//   const refresh = () => setRefreshFlag(!refreshFlag);
+
+//   return (
+//     <>
+//       <StudentForm refresh={refresh} />
+//       <StudentList refreshFlag={refreshFlag} />
+//     </>
+//   );
+// }
+
+// export default App;
+
+
+
+
+
+import React, { useState } from "react";
+
+import axios from "axios";
 
 function App() {
-  const [refreshFlag, setRefreshFlag] = useState(false);
+  const [name, setName] = useState("");
+  const [rollno, setRollno] = useState("");
+  const [branch, setBranch] = useState("");
 
-  const refresh = () => setRefreshFlag(!refreshFlag);
+  const addData = (e) => {
+    e.preventDefault();
+
+    axios
+      .post("http://localhost:9000/add-data", {
+        name,
+        rollno,
+        branch,
+      })
+      .then((result) => {
+        console.log(result.data);
+        alert("Data added successfully");
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <>
-      <StudentForm refresh={refresh} />
-      <StudentList refreshFlag={refreshFlag} />
+      <form onSubmit={addData}>
+        <label>Name: </label>
+        <input
+          type="text"
+          placeholder="Enter Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        /><br /><br />
+
+        <label>Roll No: </label>
+        <input
+          type="number"
+          placeholder="Enter Roll No"
+          value={rollno}
+          onChange={(e) => setRollno(e.target.value)}
+        /><br /><br />
+
+        <label>Branch: </label>
+        <input
+          type="text"
+          placeholder="Branch"
+          value={branch}
+          onChange={(e) => setBranch(e.target.value)}
+        /><br /><br />
+
+        <button type="submit">Add Data</button>
+      </form>
     </>
   );
 }

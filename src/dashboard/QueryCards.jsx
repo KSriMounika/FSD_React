@@ -47,3 +47,10 @@
 //     );
 // }
 // export default QueryCards;
+ const newStudent = {
+      name,
+      rollno,
+      branch
+    };
+
+    data.push(newStudent);
