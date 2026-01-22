@@ -850,62 +850,335 @@ import react from "react";
 
 
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
+// import axios from "axios";
+
+// function App() {
+//   const [name, setName] = useState("");
+//   const [rollno, setRollno] = useState("");
+//   const [branch, setBranch] = useState("");
+
+//   const addData = (e) => {
+//     e.preventDefault();
+
+//     axios
+//       .post("http://localhost:9000/add-data", {
+//         name,
+//         rollno,
+//         branch,
+//       })
+//       .then((result) => {
+//         console.log(result.data);
+//         alert("Data added successfully");
+//       })
+//       .catch((error) => console.log(error));
+//   };
+
+//   return (
+//     <>
+//       <form onSubmit={addData}>
+//         <label>Name: </label>
+//         <input
+//           type="text"
+//           placeholder="Enter Name"
+//           value={name}
+//           onChange={(e) => setName(e.target.value)}
+//         /><br /><br />
+
+//         <label>Roll No: </label>
+//         <input
+//           type="number"
+//           placeholder="Enter Roll No"
+//           value={rollno}
+//           onChange={(e) => setRollno(e.target.value)}
+//         /><br /><br />
+
+//         <label>Branch: </label>
+//         <input
+//           type="text"
+//           placeholder="Branch"
+//           value={branch}
+//           onChange={(e) => setBranch(e.target.value)}
+//         /><br /><br />
+
+//         <button type="submit">Add Data</button>
+//       </form>
+//     </>
+//   );
+// }
+
+// export default App;
+// import { useState } from "react";
+// import axios from "axios";
+// import "./App.css";
+
+// function App() {
+//   const [id, setId] = useState("");
+//   const [addName, setAddName] = useState("");
+
+//   const [targetId, setTargetId] = useState("");
+//   const [updateName, setUpdateName] = useState("");
+
+//   const [data, setData] = useState([]);
+
+//   const addData = async () => {
+//     await axios.post("http://localhost:9000/post-data", {
+//       id: Number(id),
+//       name: addName,
+//     });
+//     setId("");
+//     setAddName("");
+//     getData();
+//   };
+
+//   const getData = async () => {
+//     const res = await axios.get("http://localhost:9000/get-data");
+//     setData(res.data);
+//   };
+
+//   const deleteData = async () => {
+//     await axios.delete(`http://localhost:9000/delete/${targetId}`);
+//     setTargetId("");
+//     getData();
+//   };
+
+//   const updateData = async () => {
+//     await axios.put(`http://localhost:9000/update/${targetId}`, {
+//       name: updateName,
+//     });
+//     setTargetId("");
+//     setUpdateName("");
+//     getData();
+//   };
+
+//   return (
+//     <div className="app">
+//       <h2>Product Manager</h2>
+//       <div className="form">
+//         <input
+//           type="number"
+//           placeholder="Add ID"
+//           value={id}
+//           onChange={(e) => setId(e.target.value)}
+//         /><br /><br />
+//         <input
+//           type="text"
+//           placeholder="Add Name"
+//           value={addName}
+//           onChange={(e) => setAddName(e.target.value)}
+//         /><br /><br />
+//         <button onClick={addData}>Add</button>
+//       </div>
+
+//       <div className="form">
+//         <input
+//           type="number"
+//           placeholder="Update/Delete ID"
+//           value={targetId}
+//           onChange={(e) => setTargetId(e.target.value)}
+//         />
+//         <input
+//           type="text"
+//           placeholder="New Name"
+//           value={updateName}
+//           onChange={(e) => setUpdateName(e.target.value)}
+//         />
+//         <button onClick={updateData}>Update</button>
+//         <button onClick={deleteData}>Delete</button>
+//       </div>
+
+//       <button className="fetch" onClick={getData}>
+//         Get Data
+//       </button>
+
+//     <ul className="list">
+//         {data.map((item) => (
+//           <li key={item.id}>
+//             <span>{item.id}</span>
+//             <span>{item.name}</span>
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// }
+
+// export default App;
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import AddUser from "./AddUser";
+// import Users from "./Users";
+
+// function App() {
+//   return (
+//     <BrowserRouter>
+//       <Routes>
+//         <Route path="/" element={<AddUser />} />
+//         <Route path="/users" element={<Users />} />
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// }
+
+// export default App;
+
+// import { useState } from "react";
+
+// function App() {
+//   const [message, setMessage] = useState("");
+//   const [user, setUser] = useState(null);
+//   const [loading, setLoading] = useState(false);
+
+//   const createToken = async () => {
+//     setLoading(true);
+//     setUser(null);
+//     setMessage("Creating token...");
+
+//     try {
+//       const res = await fetch("http://localhost:5000/api/login", {
+//         method: "GET",
+//         credentials: "include"
+//       });
+
+//       if (!res.ok) {
+//         setMessage(` Create Token failed (Status: ${res.status})`);
+//         setLoading(false);
+//         return;
+//       }
+
+//       await res.json();
+//       setMessage(" Token created successfully. Now click Verify Token.");
+//       setLoading(false);
+//     } catch (err) {
+//       setMessage(" Backend not reachable. Is server running?");
+//       setLoading(false);
+//     }
+//   };
+
+//   const verifyToken = async () => {
+//     setLoading(true);
+//     setUser(null);
+//     setMessage("Verifying token...");
+
+//     try {
+//       const res = await fetch("http://localhost:5000/api/send-mail", {
+//         method: "GET",
+//         credentials: "include"
+//       });
+
+//       if (res.status === 401) {
+//         setMessage("Unauthorized: Token missing or expired. Click Create Token again.");
+//         setLoading(false);
+//         return;
+//       }
+
+//       if (!res.ok) {
+//         setMessage(` Verification failed (Status: ${res.status})`);
+//         setLoading(false);
+//         return;
+//       }
+
+//       const data = await res.json();
+//       setMessage("Token verified successfully!");
+//       setUser(data.user);
+//       setLoading(false);
+//     } catch (err) {
+//       setMessage(" Verification failed. Server error.");
+//       setLoading(false);
+//     }
+//   };
+
+//   return (
+//     <div style={container}>
+//       <h2>JWT Authentication (React)</h2>
+
+//       <button onClick={createToken} disabled={loading} style={btn}>
+//         Create Token
+//       </button>
+
+//       <button onClick={verifyToken} disabled={loading} style={btn}>
+//         Verify Token
+//       </button>
+
+//       {loading && <p>⏳ Processing...</p>}
+
+//       {message && <p style={messageStyle}>{message}</p>}
+
+//       {user && (
+//         <pre style={box}>
+// {JSON.stringify(user, null, 2)}
+//         </pre>
+//       )}
+//     </div>
+//   );
+// }
+
+// const container = {
+//   padding: "40px",
+//   fontFamily: "Arial",
+//   maxWidth: "500px"
+// };
+
+// const btn = {
+//   padding: "10px 20px",
+//   marginRight: "10px",
+//   cursor: "pointer"
+// };
+
+// const messageStyle = {
+//   marginTop: "15px",
+//   fontWeight: "bold"
+// };
+
+// const box = {
+//   marginTop: "20px",
+//   background: "#f4f4f4",
+//   padding: "15px",
+//   borderRadius: "5px"
+// };
+
+// export default App;
+
+
+import { useState } from "react";
 import axios from "axios";
 
-function App() {
-  const [name, setName] = useState("");
-  const [rollno, setRollno] = useState("");
-  const [branch, setBranch] = useState("");
+function FileUpload() {
+  const [file, setFile] = useState(null);
 
-  const addData = (e) => {
-    e.preventDefault();
+  const handleUpload = async () => {
+    if (!file) {
+      alert("Select a file first");
+      return;
+    }
 
-    axios
-      .post("http://localhost:9000/add-data", {
-        name,
-        rollno,
-        branch,
-      })
-      .then((result) => {
-        console.log(result.data);
-        alert("Data added successfully");
-      })
-      .catch((error) => console.log(error));
+    const formData = new FormData();
+    formData.append("file", file); // MUST be "file"
+
+    try {
+      const res = await axios.post(
+        "http://localhost:9000/api/file-upload",
+        formData
+      );
+      console.log(res.data);
+      alert("Upload successful");
+    } catch (err) {
+      console.error(err.response?.data || err.message);
+      alert("Upload failed");
+    }
   };
 
   return (
-    <>
-      <form onSubmit={addData}>
-        <label>Name: </label>
-        <input
-          type="text"
-          placeholder="Enter Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        /><br /><br />
-
-        <label>Roll No: </label>
-        <input
-          type="number"
-          placeholder="Enter Roll No"
-          value={rollno}
-          onChange={(e) => setRollno(e.target.value)}
-        /><br /><br />
-
-        <label>Branch: </label>
-        <input
-          type="text"
-          placeholder="Branch"
-          value={branch}
-          onChange={(e) => setBranch(e.target.value)}
-        /><br /><br />
-
-        <button type="submit">Add Data</button>
-      </form>
-    </>
+    <div style={{ padding: "20px" }}>
+      <input
+        type="file"
+        accept="image/*"
+        onChange={(e) => setFile(e.target.files[0])}
+      />
+      <br /><br />
+      <button onClick={handleUpload}>Upload</button>
+    </div>
   );
 }
 
-export default App;
+export default FileUpload;
